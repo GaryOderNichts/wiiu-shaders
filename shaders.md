@@ -7,7 +7,9 @@ The only issues are shaders. You can't simply compile GLSL shaders at runtime. I
 Before reading through this, I expect you to know a bit about shaders in general and GLSL.
 
 ## Getting started
-In this tutorial we'll write our shaders in assembly and assemble them using latte-assembler into a format called GSH (GX2 Shader). This format can be read by GX2.  
+In this tutorial we'll write our shaders in assembly and assemble them using latte-assembler into the GSH file format.  
+The GSH file stores the GX2 shader data. This format can be read by a library called GFD.
+
 Latte-assembler is part of decaf-emu and can be downloaded from the artifacts of the [latest workflow](https://github.com/decaf-emu/decaf-emu/actions) (You need a GitHub account to download artifacts).
 
 ## Writing our first shader
@@ -151,7 +153,7 @@ This sets the number of inputs, we output from our vertex shader. Since we only 
 This describes the inputs.  
 `SEMANTIC` being the semantic index we set in the vertex shader.  
 `DEFAULT_VAL` is the default value in case the semantic is not set. 1 would be a default of `0.0f, 0.0f, 0.0f, 1.0f`.  
-The values of semantic 0 stored into R0, the one of semantic 1 into R1, ...
+The value of semantic 0 is stored in R0, the value of semantic 1 in R1, ...
 
 ```
 00 EXP_DONE: PIX0, R0
